@@ -1,0 +1,79 @@
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,500' rel='stylesheet' type='text/css'>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <meta name="description" content="Chicago could be the next">
+  <title>Chicago could be the next</title>
+  <style type="text/css">
+    body,html {
+      font-family: 'Roboto', sans-serif;
+      font-size:2em;
+      font-weight: 100;
+      margin:100px auto;
+      max-width: 90%;
+      text-align: center;
+    }
+    strong {
+      font-weight: 500;
+    }
+    a:link, a:visited {
+      color:#999;
+      text-decoration: none;
+    }
+    a:active {
+      color: #77C7E0;
+      text-decoration: none;
+    }
+    #refresh, #tweet {
+      display: inline !important;
+    }
+
+    p.little-text {
+      font-size: 14;
+    }
+  </style>
+  <script type="text/javascript">
+
+    var city = ["Abu Dhabi", "Lagos", "Istanbul", "Mumbai", "Moscow", 
+      "Rome", "Seoul", "Jakarta", "Kinshasa", "Tokyo", "Lima",
+      "London", "New York", "Brooklyn", "Bangkok", "San Francisco", 
+      "Tehran", "Santiago de Chile", "Ahmedabad", "Houston",
+      "Ho Chi Minh City", "Rio", "Buenos Aires", "Alexandria", 
+      "Johannesburg", "Dar es Salaam", "Izmir", "Taipei", "L.A.",
+      "Pyongyang", "Madrid", "Addis Ababa", "Dallas/Fort Worth",
+      "Toronto", "San Jose", "Miami", "Riyadh", "Singapore", "Milan",
+      "Khartoum", "Denver", "Orlando", "Sacramento", "Atlanta",
+      "Boston", "Seattle", "San Diego", "Las Vegas", "Portland", 
+      "Evanston", "Cleveland", "Indianapolis", "Virginia Beach",
+      "Milwaukee", "Salt Lake City", "Madison", "Springfield", 
+      "Kansas City", "Minneapolis", "Paris", "Venice", "Barcelona",
+      "Washington, D.C.", "San Antonio", "Ottawa", "Edmonton",
+      "Quebec City" ]
+
+    function generate() {
+      //pick some terms
+      var rand1 = Math.floor(Math.random() * city.length);
+      var a = city[rand1];
+
+      //write text
+      var phrase = "Chicago could be the next <strong>" + a + "</strong>."
+      var phrase_tweet = "Chicago could be the next " + a + "."
+      $('#phrase').html(phrase);
+
+      //populate tweet
+      $('#tweet').attr('href', 'http://twitter.com/share?url='+document.URL+'&text='+phrase_tweet)
+    }
+  </script>
+</head>
+<body onload="generate();">
+
+  <div id="phrase">
+
+  </div>
+  <div>
+    <p><a href="javascript:generate();" id="refresh"><i class='icon-refresh'></a></i> &nbsp; <a href="" id="tweet"><i class="icon-twitter"></i></a></p>
+  </div>
+  <p class="little-text">Inspired by <a href="http://thisislessofa.com/">thisislessofa.com</a> and the 2015 Chicago mayoral runoff.</p>
+</body>
+</html>
